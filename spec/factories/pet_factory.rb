@@ -15,5 +15,6 @@ FactoryBot.define do
     name   { 'Brian Griffin' }
     kind   { 'Dog' }
     breed  { 'Labrador Retriever' }
+    weight { 5 }
   end
 end
