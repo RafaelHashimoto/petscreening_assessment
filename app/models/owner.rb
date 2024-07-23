@@ -11,8 +11,11 @@
 #  updated_at   :datetime         not null
 #
 class Owner < ApplicationRecord
-  validates :first_name, :last_name, presence: true, length: { minimum: 3,  maximum: 50}
+  # associations
+  has_many :pets
 
+  # validations
+  validates :first_name, :last_name, presence: true, length: { minimum: 3,  maximum: 50}
   validates :email,        presence: true, length: { minimum: 10, maximum: 50}
   validates :phone_number, presence: true, length: { minimum: 10, maximum: 20}
 end

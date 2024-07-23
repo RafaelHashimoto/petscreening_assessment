@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_23_225716) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_23_232921) do
   create_table "owners", force: :cascade do |t|
     t.string "first_name", limit: 50
     t.string "last_name", limit: 50
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_225716) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "weight"
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_pets_on_owner_id"
   end
 
 end

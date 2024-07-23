@@ -14,6 +14,10 @@
 require 'rails_helper'
 
 RSpec.describe Owner, type: :model do
+  describe 'associations' do
+    it { should have_many(:pets) }
+  end
+
   describe 'validations' do
     attributes_validations = {
       first_name:   { min_length: 3,  max_length: 50 },
