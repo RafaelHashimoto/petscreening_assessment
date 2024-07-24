@@ -28,7 +28,7 @@ Pet.create!([
   { name: 'Brian Griffin III', kind: 'Dog', breed: 'Labrador Retriever', owner: peter, weight: 10 }
 ])
 
-puts "#{peter.name} #{peter.pets.count} dogs were created"
+puts "#{peter.first_name} #{peter.pets.count} dogs were created"
 
 puts "Seeding BreedInfos data from DogAPI"
 BreedInfos::Seed.insert_all
