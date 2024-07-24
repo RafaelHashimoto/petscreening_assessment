@@ -9,10 +9,13 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  weight     :float
+#  owner_id   :integer
 #
 class Pet < ApplicationRecord
+  # associations
+  belongs_to :owner, optional: true
 
+  # validations
   validates_presence_of :name, :kind
-
   validates :weight, numericality: { greater_than_or_equal_to: 0, less_than: 10000 }
 end
