@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe PetsController, type: :controller do
   let(:pet)         { FactoryBot.create(:pet) }
-  let(:attributes)  { { name: 'Snuffles', kind: 'Dog', breed: 'Shih Tzu' } }
+  let(:attributes)  { { name: 'Snuffles', kind: 'Dog', breed: 'Shih Tzu', weight: 5 } }
 
   describe 'GET #index' do
     subject { get :index }

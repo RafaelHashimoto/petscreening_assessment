@@ -8,8 +8,11 @@
 #  breed      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  weight     :float
 #
 class Pet < ApplicationRecord
 
   validates_presence_of :name, :kind
+
+  validates :weight, numericality: { greater_than_or_equal_to: 0, less_than: 10000 }
 end
