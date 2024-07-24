@@ -54,8 +54,21 @@ We do not need any frontend changes, just make sure the new features are correct
 4.  **Documentation:** Clear and concise documentation covering setup instructions, usage guidelines, and any notable design decisions.
 5.  **Adherence to Best Practices:** Consistent use of Rails conventions, adherence to RESTful principles, and implementation of secure coding practices.
 
-
 ### Submitting your assessment
 1. Push your changes to the feature branch you created in the setup.
 2. Create a pull request and share the link with us.
 3. After you submit your solution, we'll review it and talk it over with you.
+
+##### Steps to Run the Application
+1. Have ruby `3.2.4` installed
+2. Run `bundle install`
+3. Run `rails db:setup` ( this step may take a while because the seed runs the Dog API integration)
+4. Run `rails c` and run the following commands to confirm all the assessment requirements were accomplished:
+
+```
+Pet.last.weight # confirms the weight column was created in the Pet table
+Owner.last      # confirms the owner table was created
+Owner.last.pets # confirms the one to many relationship between Owner and Pet
+BreedInfo.count # shows all the records from the DogApi /breeds endpoint
+Owner.last.pets.last.breed_info # confirms the owner has the ability to pick a pet and get breed information about that pet
+```
