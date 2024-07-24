@@ -9,7 +9,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Pet < ApplicationRecord
-
-  validates_presence_of :name, :kind
+FactoryBot.define do
+  factory :pet do
+    name   { 'Brian Griffin' }
+    kind   { 'Dog' }
+    breed  { 'Labrador Retriever' }
+  end
 end
