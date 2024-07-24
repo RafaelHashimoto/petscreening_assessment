@@ -15,5 +15,5 @@
 #  updated_at          :datetime         not null
 #
 class BreedInfo < ApplicationRecord
-
+  has_many :pets, primary_key: 'name', foreign_key: 'breed', class_name: 'Pet'
 end
