@@ -29,3 +29,6 @@ Pet.create!([
 ])
 
 puts "#{peter.first_name} #{peter.pets.count} dogs were created"
+
+puts "Seeding BreedInfos data from DogAPI"
+BreedInfos::Seed.insert_all

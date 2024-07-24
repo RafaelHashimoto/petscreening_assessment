@@ -14,8 +14,10 @@
 class Pet < ApplicationRecord
   # associations
   belongs_to :owner, optional: true
+  belongs_to :breed_info, primary_key: 'name', foreign_key: 'breed', class_name: 'BreedInfo', optional: true
 
   # validations
   validates_presence_of :name, :kind
   validates :weight, numericality: { greater_than_or_equal_to: 0, less_than: 10000 }
+
 end

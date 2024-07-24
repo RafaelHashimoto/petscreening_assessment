@@ -41,3 +41,4 @@
 /config/master.key
 /coverage
 .rspec
+.byebug_history

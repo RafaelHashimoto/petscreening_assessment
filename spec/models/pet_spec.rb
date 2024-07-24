@@ -17,6 +17,7 @@ require 'rails_helper'
 RSpec.describe Pet, type: :model do
   describe 'associations' do
     it { should belong_to(:owner).optional }
+    it { should belong_to(:breed_info).optional }
   end
 
   describe 'validations' do
